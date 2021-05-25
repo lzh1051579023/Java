@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+</head>
+
+<body>
+	<div>
+		<a href="toAddGoods">新建活动</a>
+	</div>
+	<table>
+		<thead>
+			<tr>
+				<th>Name</th>
+				<th>Remark</th>
+				<th>CreatedTime</th>
+				<th>Operation</th>
+			</tr>
+		</thead>
+		<tbody>
+			<!--th:each,th:text,${} 由 thymeaf 引擎进行定义 -->
+			<tr>
+				
+				<td><a th:href="@{/Goods/goodsById(id=${g.id})}">修改</a> <a
+					th:href="@{/Goods/goodsDelete(id=${g.id})}">删除</a></td>
+			</tr>
+		</tbody>
+		<script type="text/javascript">
+			function doAjaxGet(url,params,callback){
+				var xhr = new XMLHttpRequest();
+				xhr.onreadystatechange = function(){
+					if(xhr.readyState==4&&xhr.status==200){
+						callback(xhr.responseText);
+					}
+				}
+				xhr.open("GET",url+"?"+params,true);
+				xhr.send(null);
+			}
+			function doGetActivitys(){
+				const url = "doActivitys";
+				var params = "";
+				do Ajax(url,params,function(result){
+					console.log("jsonstr",result);
+				});
+			}
+		</script>
+	</table>
+</body>
+</html>

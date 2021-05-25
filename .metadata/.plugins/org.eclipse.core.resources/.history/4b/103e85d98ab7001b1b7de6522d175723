@@ -1,0 +1,9 @@
+package com.cy.pojo;
+
+public enum Status {
+	SUCCESS(10001,"查询成功"),;
+
+	Status(int i, String string) {
+		// TODO Auto-generated constructor stub
+	}
+}

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<form action="goodsById" method="POST">
+	<!-- hidden隐藏域,在提交表单时连list.id一起提交 -->
+	<input type="hidden" name="id" value="${ list.id }"/>
+	<table border="1">
+		<tr>
+			<td width="30%">商品名称</td>
+			<td>
+				<input type="text" name="name" value="${list.name}"/>
+			</td>
+		</tr>
+		<tr>
+			<td>备注</td>
+			<td>
+				<input type="text" name="remark" value="${list.remark}"/>
+			</td>
+		</tr>
+		<tr>
+			<td colspan="2">
+				<input type="submit" value="提	交" />
+			</td>
+		</tr>
+	</table>
+</form>
+</body>
+</html>

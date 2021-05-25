@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?><testrun name="GoodsServiceTests.tests" project="CGB-SBOOT-1" tests="1" started="1" failures="0" errors="0" ignored="0">
+  <testsuite name="com.cy.servicetests.GoodsServiceTests" time="0.071" displayname="GoodsServiceTests" uniqueid="[engine:junit-jupiter]/[class:com.cy.servicetests.GoodsServiceTests]">
+    <testcase name="tests" classname="com.cy.servicetests.GoodsServiceTests" time="0.071" displayname="tests()" uniqueid="[engine:junit-jupiter]/[class:com.cy.servicetests.GoodsServiceTests]/[method:tests()]"/>
+  </testsuite>
+</testrun>

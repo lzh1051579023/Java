@@ -1,0 +1,42 @@
+package com.cy.controller;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+import com.cy.pojo.Goods;
+import com.cy.service.GoodsService;
+
+@Controller
+@RequestMapping("/Goods/")
+public class GoodsController {
+	@Autowired
+	private GoodsService goodsService;
+	
+	@RequestMapping("selectGoods")
+	public String selectGoods(Integer id) {
+		List<Goods> goods = goodsService.selectById(id);
+		
+		return "goods_list";
+	}
+	@RequestMapping("goodsUI")
+	public String goodsUI(Model model) {
+		List<Goods> list = goodsService.allGoods();
+		model.addAttribute("List", list);
+		return "goods_list";
+	}
+	@RequestMapping("toAddGoods")
+	public String toaddGoods() {
+		return "goods_add";
+	}
+	@RequestMapping("addGoods")
+	public String addGoods(Goods goods) {
+		goodsService.addGoods(goods);
+		return "redirect:goodsUI";
+	}
+	
+	
+}

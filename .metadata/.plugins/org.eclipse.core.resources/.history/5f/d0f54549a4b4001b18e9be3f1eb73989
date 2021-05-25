@@ -1,0 +1,28 @@
+package com.cy.servicetests;
+
+import java.util.List;
+import java.util.Scanner;
+
+import org.junit.jupiter.api.Test;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.context.SpringBootTest;
+
+import com.cy.pojo.Goods;
+import com.cy.service.GoodsService;
+
+@SpringBootTest
+public class GoodsServiceTests {
+	@Autowired
+	private GoodsService goodsService;
+	
+	@Test
+	public void testGoods() {
+		System.out.println("输入查询id");
+		Scanner input = new Scanner(System.in);
+		int id = input.nextInt();
+		List<Goods> list = goodsService.selectById(id);
+		for (Goods goods : list) {
+			System.out.println(goods);
+		}
+	}
+}

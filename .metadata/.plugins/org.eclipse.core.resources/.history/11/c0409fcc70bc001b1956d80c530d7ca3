@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+</head>
+
+<body>
+	<div>
+		<a href="toAddGoods">新建活动</a>
+	</div>
+	<table>
+		<thead>
+			<tr>
+				<th>Name</th>
+				<th>Remark</th>
+				<th>CreatedTime</th>
+				<th>Operation</th>
+			</tr>
+		</thead>
+		<tbody id="tbodyId">
+			<!--th:each,th:text,${} 由 thymeaf 引擎进行定义 -->
+			<tr>
+
+				<!-- <td><a th:href="@{/Goods/goodsById(id=${g.id})}">修改</a> <a
+					th:href="@{/Goods/goodsDelete(id=${g.id})}">删除</a></td> -->
+					<td bu></td>
+			</tr>
+		</tbody>
+		<script type="text/javascript">
+			function doAjaxGet(url,params,callback){
+				var xhr = new XMLHttpRequest();
+				xhr.onreadystatechange = function(){
+					if(xhr.readyState==4&&xhr.status==200){
+						callback(xhr.responseText);
+					}
+				}
+				xhr.open("GET",url+"?"+params,true);
+				xhr.send(null);
+			}
+			function doGetActivitys(){
+				
+				const url = "doGoods";
+				var params = "";
+				doAjaxGet(url,params,function(result){
+					console.log("JsonStr",result);
+					doHandleResponseResult(result);
+				});
+			}
+			doGetActivitys();
+			
+			function doHandleResponseResult(result){
+				var JsonObj = JSON.parse(result);
+				var jsonStr = "";
+				for(var i = 1; i<JsonObj.length; i++){
+					jsonStr += "<tr>" + 
+						"<td>" + JsonObj[i].name + "</td>"+
+						"<td>" + JsonObj[i].remark + "</td>"+
+						"<td>" + new Date(JsonObj[i].createdTime).toLocalString() + "</td>"+
+						"</tr>"
+				}
+				var tBody = document.getElementById("tbodyId");
+				
+			}
+		</script>
+	</table>
+</body>
+</html>

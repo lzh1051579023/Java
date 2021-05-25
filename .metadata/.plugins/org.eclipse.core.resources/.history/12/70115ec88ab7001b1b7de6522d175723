@@ -1,0 +1,5 @@
+package com.cy.pojo;
+
+public enum Status {
+	SUCCESS(10001,"查询成功"),
+}

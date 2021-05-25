@@ -1,0 +1,44 @@
+package com.cy.servicetests;
+
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileReader;
+import java.io.Reader;
+import java.util.Arrays;
+import java.util.List;
+import java.util.Scanner;
+import java.util.stream.Collectors;
+
+import org.junit.jupiter.api.Test;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.context.SpringBootTest;
+
+import com.cy.pojo.Goods;
+import com.cy.service.GoodsService;
+
+@SpringBootTest
+public class GoodsServiceTests {
+	@Autowired
+	private GoodsService goodsService;
+	
+	
+	@Test
+	public void testGoods() {
+		try {
+			int[] a = {1,2,3,4,5};
+			List<Integer> lists = Arrays.stream(a).boxed().collect(Collectors.toList());
+			lists.add(6);
+		
+			System.out.println("输入查询id");
+			Scanner input = new Scanner(System.in);
+			int id = input.nextInt();
+			List<Goods> list = goodsService.selectById(id);
+			for (Goods goods : list) {
+				System.out.println(goods);
+			}
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+}

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+ul li {
+	list-style-type: none
+}
+</style>
+</head>
+<body>
+	<form action="goodsUpdate" method="post">
+		<ul>
+			<li><input type="text" name="id" th:value="${act.id}">
+			<li>商品名称
+			<li><input type="text" name="name" th:value="${act.name}">
+			<li>备注
+			<li><input type="text" name="remark" th:value="${act.remark}">
+			<li>创建时间
+			<li><input type="text" name="remark" th:value="${act.createdTime}">
+			<li><input type="submit" value="提交">
+		</ul>
+	</form>
+</body>
+</html>

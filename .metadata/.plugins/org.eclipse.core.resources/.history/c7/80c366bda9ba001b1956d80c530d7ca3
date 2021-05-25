@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+</head>
+
+<body>
+	<div>
+		<a href="toAddGoods">新建活动</a>
+	</div>
+	<table>
+		<thead>
+			<tr>
+				<th>Name</th>
+				<th>Remark</th>
+				<th>CreatedTime</th>
+				<!-- <th>Operation</th> -->
+			</tr>
+		</thead>
+		<tbody>
+			<!--th:each,th:text,${} 由 thymeaf 引擎进行定义 -->
+			<tr th:each="g: ${List}">
+				<td th:text="${g.name}"></td>
+				<!-- 中间默认值可以为空 -->
+				<td th:text="${g.remark}"></td>
+				<td th:text="${g.createdTime}"></td>
+				<td>
+					<a th:href="@{/Goods/goodsDelete(id=${g.id})}">修改</a>
+					<a th:href="@{/Goods/goodsDelete(id=${g.id})}">删除</a>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</body>
+</html>

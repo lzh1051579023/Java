@@ -1,0 +1,66 @@
+package com.cy.servicetests;
+
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileReader;
+import java.io.Reader;
+import java.util.Arrays;
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.List;
+import java.util.Map.Entry;
+import java.util.Objects;
+import java.util.Scanner;
+import java.util.Set;
+import java.util.stream.Collectors;
+
+import org.junit.jupiter.api.Test;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.context.SpringBootTest;
+
+import com.cy.pojo.Goods;
+import com.cy.service.GoodsService;
+
+enum Status{
+	SUCCESS,
+	FAILED,
+}
+
+@SpringBootTest
+public class GoodsServiceTests {
+	@Autowired
+	private GoodsService goodsService;
+	
+	@Test
+	public void testGoods() {
+		try {
+			Integer i = new Integer(1);
+			System.out.println("输入查询id");
+			Scanner input = new Scanner(System.in);
+			int id = input.nextInt();
+			HashMap<Object, Object> map = new HashMap<>();
+			map.put(1, "测试");
+			map.put(2, "测试004");
+			Set<Entry<Object, Object>> entrySet = map.entrySet();
+			Iterator<Entry<Object, Object>> it = entrySet.iterator();
+			while(it.hasNext()) {
+				Entry<Object, Object> n = it.next();
+				int key = (int) n.getKey();
+				String value = (String) n.getValue();
+				System.out.println(key + ":" + value);
+			}
+			List<Goods> list = goodsService.selectById(id);
+			if(list!=null && list.size()>0) {
+				for (Goods goods : list) {
+					System.out.println(goods);
+				}
+				System.out.println(Status.SUCCESS);
+			}else {
+				System.out.println(Status.FAILED);
+			}
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+}

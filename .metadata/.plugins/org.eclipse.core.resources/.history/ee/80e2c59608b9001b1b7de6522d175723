@@ -1,0 +1,20 @@
+package com.cy.controller;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+import com.cy.service.GoodsService;
+
+@Controller
+@RequestMapping("/Goods/")
+public class GoodsController {
+	@Autowired
+	private GoodsService goodsService;
+	@RequestMapping("selectGoods")
+	public String selectGoods() {
+		
+		return "goods";
+	}
+	
+}

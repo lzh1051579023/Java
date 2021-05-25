@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<form action="goodsUpdate" method="post">
+		<ul>
+			<li><input type="hidden" name="id" th:value="${act.id}">
+			<li>商品名称
+			<li><input type="text" name="name" th:value="${act.name}">
+			<li>备注
+			<li><input type="text" name="remark" th:value="${act.remark}">
+	</form>
+</body>
+</html>

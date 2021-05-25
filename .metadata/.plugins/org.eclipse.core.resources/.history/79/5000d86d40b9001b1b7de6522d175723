@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<h1>商品页面</h1>
+	<form action="goodsUI" method="post">
+		<table border="1">
+			<tr>
+				<td width="30%">商品名字</td>
+				<td><input type="text" name="name" /></td>
+			</tr>
+			<tr>
+				<td>备注</td>
+				<td><input type="text" name="remark" /></td>
+			</tr>
+			<tr>
+				<td>创建时间</td>
+				<td><input type="text" name="createdTime" /></td>
+			</tr>
+
+			<tr>
+				<td colspan="2"><input type="submit" value="提 	交" /></td>
+			</tr>
+		</table>
+	</form>
+	</form>
+</body>
+</html>

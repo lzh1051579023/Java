@@ -1,0 +1,23 @@
+package com.cy.servicetests;
+
+import java.util.Scanner;
+
+import org.junit.jupiter.api.Test;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.context.SpringBootTest;
+
+import com.cy.service.GoodsService;
+
+@SpringBootTest
+public class GoodsServiceTests {
+	@Autowired
+	private GoodsService goodsService;
+	
+	@Test
+	public void testGoods() {
+		System.out.println("输入查询id");
+		Scanner input = new Scanner(System.in);
+		int[] id = input.nextInt();
+		goodsService.selectById(id);
+	}
+}

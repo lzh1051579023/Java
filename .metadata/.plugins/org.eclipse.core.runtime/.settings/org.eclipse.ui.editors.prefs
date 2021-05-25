@@ -1,0 +1,10 @@
+AbstractTextEditor.Color.Background=199,237,204
+AbstractTextEditor.Color.Background.SystemDefault=false
+AbstractTextEditor.Color.SelectionForeground=128,64,64
+AbstractTextEditor.Color.SelectionForeground.SystemDefault=false
+STS4BootMarkerIndicationColor=219,236,207
+eclipse.preferences.version=1
+org.eclipse.jst.jsf.ui.elhyperlinkdetector=true
+org.eclipse.lsp4e.documentLinkDetector=true
+overviewRuler_migration=migrated_3.1
+spellingEnabled=false
